@@ -17,16 +17,15 @@ class App extends Component{
 				this.setState({ news: res.data.articles });
 			})
   }
-  renderData() {
-    return this.state.news.map((items, Id) =>
-       <News key={Id} data={items} />
-    );
-  }
   render(){
     return(
       <View style={styles.container}>
         <ScrollView >
-          {this.renderData()}
+          {
+            this.state.news.map((items, Id) =>
+              <News key={Id} data={items} />
+            )
+          }
         </ScrollView>
       </View>
     )
