@@ -14,7 +14,6 @@ class App extends Component{
 	componentDidMount() {
     axios.get('https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=62cb43128bf34a019ea46fc9a9e42289')
 			.then(res => {
-				const newsData = res.data.articles;
 				this.setState({ news: newsData });
 			})
   }
